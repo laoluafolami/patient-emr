@@ -23,8 +23,6 @@ export enum AppointmentStatus {
   NO_SHOW = 'NO_SHOW',
 }
 
-import { UserRole } from '@prisma/client';
-
 /**
  * JWT payload structure
  */
