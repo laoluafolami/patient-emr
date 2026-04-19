@@ -13,7 +13,7 @@ const requirements: PasswordRequirement[] = [
   { label: 'One uppercase letter (A-Z)', test: (pw) => /[A-Z]/.test(pw) },
   { label: 'One lowercase letter (a-z)', test: (pw) => /[a-z]/.test(pw) },
   { label: 'One number (0-9)', test: (pw) => /[0-9]/.test(pw) },
-  { label: 'One special character (!@#$...)', test: (pw) => /[!@#$%^&*()_+\-=\[\]{};':"\\|,.<>\/?]/.test(pw) },
+  { label: 'One special character (!@#$...)', test: (pw) => /[!@#$%^&*()_+\-={}[\];':"\\|,.<>/?]/.test(pw) },
 ];
 
 const EyeIcon = ({ open }: { open: boolean }) =>

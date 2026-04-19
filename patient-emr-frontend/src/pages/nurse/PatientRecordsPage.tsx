@@ -11,11 +11,6 @@ const FALLBACK_PATIENTS: PatientOption[] = [
   { id: 4, name: 'Sarah Williams', patientId: 'P-004', room: 'OPD-4', doctor: 'Dr. Smith' },
 ];
 
-const recentRecords = [
-  { id: 1, patient: 'Mary Johnson', time: '09:45 AM', complaint: 'Fatigue and dizziness', symptoms: 'Persistent fatigue for 3 days, occasional dizziness when standing', observations: 'Patient appears pale, slightly dehydrated', status: 'flagged' },
-  { id: 2, patient: 'John Doe', time: '08:30 AM', complaint: 'Routine check-in', symptoms: 'No acute complaints', observations: 'Patient in good spirits, compliant with medications', status: 'normal' },
-];
-
 const commonSymptoms = ['Fever', 'Headache', 'Fatigue', 'Nausea', 'Vomiting', 'Chest pain', 'Shortness of breath', 'Dizziness', 'Abdominal pain', 'Back pain', 'Joint pain', 'Cough'];
 
 export const PatientRecordsPage: React.FC = () => {

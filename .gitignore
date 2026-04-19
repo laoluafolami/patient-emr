@@ -38,3 +38,4 @@ patient-emr-frontend/node_modules/
 # Coverage
 coverage/
 .nyc_output/
+.kiro

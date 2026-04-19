@@ -1,0 +1,4 @@
+src/pages/admin/ActivityLogsPage.tsx
+src/pages/admin/SettingsPage.tsx
+src/pages/admin/SystemMonitorPage.tsx
+src/pages/admin/UserManagementPage.tsx

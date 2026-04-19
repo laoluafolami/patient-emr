@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { SectionHeader } from '../../components/dashboard/SectionHeader';
 import { EmptyState } from '../../components/dashboard/EmptyState';
 
 const doctors = [

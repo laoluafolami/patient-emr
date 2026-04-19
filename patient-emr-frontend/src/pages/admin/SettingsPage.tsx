@@ -1,5 +1,4 @@
 ﻿import React, { useState } from 'react';
-import { useAuth } from '../../context/AuthContext';
 
 interface Settings {
   appointmentDuration: number;
@@ -100,7 +99,6 @@ const selCls =
 const numCls =
   'w-24 px-3 py-2 rounded-xl border border-neutral-200 dark:border-neutral-700 bg-neutral-50 dark:bg-neutral-800 text-sm text-neutral-900 dark:text-white focus:outline-none focus:ring-2 focus:ring-orange-500/40 focus:border-orange-400 transition-all text-right';
 export const SettingsPage: React.FC = () => {
-  const { user } = useAuth();
   const [settings, setSettings] = useState<Settings>(DEFAULT_SETTINGS);
   const [saved, setSaved] = useState<Settings>(DEFAULT_SETTINGS);
   const [saveState, setSaveState] = useState<'idle' | 'saving' | 'saved'>('idle');

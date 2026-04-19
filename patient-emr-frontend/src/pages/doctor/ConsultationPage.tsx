@@ -1,5 +1,4 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { useAuth } from '../../context/AuthContext';
 
 const patients = [
   { id: 1, name: 'John Doe', patientId: 'P-001', age: 45, condition: 'Hypertension, Type 2 Diabetes', bloodType: 'O+', allergies: 'Penicillin' },
@@ -16,7 +15,6 @@ const patientHistory: Record<number, { vitals: any; lastVisit: string; medicatio
 type ConsultStep = 'select' | 'active' | 'complete';
 
 export const ConsultationPage: React.FC = () => {
-  const { user } = useAuth();
   const [step, setStep] = useState<ConsultStep>('select');
   const [selectedPatient, setSelectedPatient] = useState<typeof patients[0] | null>(null);
   const [notes, setNotes] = useState('');

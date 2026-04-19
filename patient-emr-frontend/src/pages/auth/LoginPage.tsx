@@ -37,13 +37,6 @@ export const LoginPage: React.FC = () => {
   const [emailError, setEmailError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  // Redirect if already authenticated
-  useEffect(() => {
-    if (isAuthenticated && user) {
-      redirectByRole(user.role);
-    }
-  }, [isAuthenticated, user]);
-
   const redirectByRole = (role: string) => {
     switch (role) {
       case 'PATIENT': navigate('/patient/dashboard'); break;
@@ -53,6 +46,14 @@ export const LoginPage: React.FC = () => {
       default: navigate('/dashboard');
     }
   };
+
+  // Redirect if already authenticated
+  useEffect(() => {
+    if (isAuthenticated && user) {
+      redirectByRole(user.role);
+    }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [isAuthenticated, user]);
 
   const validateForm = (): boolean => {
     let valid = true;

@@ -46,14 +46,6 @@ const navItems: NavItem[] = [
   },
 ];
 
-const ComingSoon: React.FC<{ page: string }> = ({ page }) => (
-  <div className="flex flex-col items-center justify-center min-h-[60vh] text-center animate-fade-in">
-    <div className="text-5xl mb-4">🚧</div>
-    <h2 className="text-xl font-bold text-neutral-800 dark:text-neutral-100 mb-2">{page}</h2>
-    <p className="text-sm text-neutral-500 dark:text-neutral-400">This section is coming in the next phase.</p>
-  </div>
-);
-
 export const AdminPortal: React.FC = () => (
   <DashboardLayout navItems={navItems} role="ADMIN">
     <Routes>

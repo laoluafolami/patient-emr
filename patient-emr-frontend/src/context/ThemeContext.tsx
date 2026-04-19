@@ -16,7 +16,7 @@ interface ThemeProviderProps {
 
 export const ThemeProvider: React.FC<ThemeProviderProps> = ({ children }) => {
   const [theme, setThemeState] = useState<Theme>('light');
-  const [isLoaded, setIsLoaded] = useState(true);
+  const [isLoaded] = useState(true);
 
   // Initialize theme on mount
   useEffect(() => {

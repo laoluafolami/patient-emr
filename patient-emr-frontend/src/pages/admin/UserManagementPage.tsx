@@ -103,7 +103,6 @@ const Spinner = () => (
   </svg>
 );
 export const UserManagementPage: React.FC = () => {
-  const { user: authUser } = useAuth();
   const [users, setUsers] = useState<UserRecord[]>(SAMPLE_USERS);
   const [search, setSearch] = useState('');
   const [activeTab, setActiveTab] = useState<FilterTab>('ALL');
