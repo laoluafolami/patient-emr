@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import { NavLink, useLocation, useNavigate } from 'react-router-dom';
 import { useAuth } from '../context/AuthContext';
 import { useTheme } from '../context/ThemeContext';
+import { Logo } from '../components/Logo';
 
 /* ─────────────────────────────────────────────────────────────
    NAV ITEM TYPES
@@ -117,24 +118,12 @@ const Sidebar: React.FC<{
         <div className={`flex items-center h-16 px-4 border-b border-neutral-100 dark:border-neutral-800 flex-shrink-0 ${isCollapsed ? 'justify-center' : 'justify-between'}`}>
           {!isCollapsed && (
             <div className="flex items-center gap-2.5 min-w-0">
-              <div className={`w-8 h-8 rounded-xl bg-gradient-to-br ${config.gradient} flex items-center justify-center flex-shrink-0 shadow-elevation-1`}>
-                <svg className="w-4 h-4 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-                </svg>
-              </div>
-              <div className="min-w-0">
-                <p className="font-bold text-sm text-neutral-900 dark:text-white truncate">MediCore</p>
-                <p className={`text-[10px] font-medium truncate ${config.accentText}`}>{config.label}</p>
-              </div>
+              <Logo size="sm" showText={true} />
             </div>
           )}
 
           {isCollapsed && (
-            <div className={`w-9 h-9 rounded-xl bg-gradient-to-br ${config.gradient} flex items-center justify-center shadow-elevation-1`}>
-              <svg className="w-5 h-5 text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2.5} d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" />
-              </svg>
-            </div>
+            <img src="/logo.png" alt="MediCore" className="w-9 h-9 rounded-xl object-contain" />
           )}
 
           {/* Collapse toggle — desktop only */}

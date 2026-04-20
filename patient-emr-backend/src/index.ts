@@ -22,6 +22,9 @@ import { errorHandler } from './middleware/errorHandler';
 const app: Express = express();
 const PORT = process.env.PORT || 3001;
 
+// Trust proxy — required for correct IP detection behind Render/Netlify/etc.
+app.set('trust proxy', 1);
+
 // ============================================================================
 // MIDDLEWARE CONFIGURATION
 // ============================================================================
