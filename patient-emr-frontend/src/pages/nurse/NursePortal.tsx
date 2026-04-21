@@ -4,6 +4,8 @@ import { DashboardLayout, NavItem } from '../../layouts/DashboardLayout';
 import { NurseDashboard } from './NurseDashboard';
 import { VitalsPage } from './VitalsPage';
 import { PatientRecordsPage } from './PatientRecordsPage';
+import { ProfilePage } from '../shared/ProfilePage';
+import { ChangePasswordPage } from '../shared/ChangePasswordPage';
 
 const navItems: NavItem[] = [
   {
@@ -59,6 +61,8 @@ export const NursePortal: React.FC = () => (
       <Route path="patient-records" element={<PatientRecordsPage />} />
       <Route path="patients" element={<ComingSoon page="My Patients" />} />
       <Route path="history" element={<ComingSoon page="Entry History" />} />
+      <Route path="profile" element={<ProfilePage />} />
+      <Route path="change-password" element={<ChangePasswordPage />} />
       <Route path="*" element={<Navigate to="dashboard" replace />} />
     </Routes>
   </DashboardLayout>

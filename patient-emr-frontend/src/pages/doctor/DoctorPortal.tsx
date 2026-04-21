@@ -8,6 +8,8 @@ import { DoctorLabResultsPage } from './LabResultsPage';
 import { ReportsPage } from './ReportsPage';
 import { SchedulePage } from './SchedulePage';
 import { DoctorMessagesPage } from './DoctorMessagesPage';
+import { ProfilePage } from '../shared/ProfilePage';
+import { ChangePasswordPage } from '../shared/ChangePasswordPage';
 
 const navItems: NavItem[] = [
   {
@@ -88,6 +90,8 @@ export const DoctorPortal: React.FC = () => (
       <Route path="prescriptions" element={<ComingSoon page="Prescriptions" />} />
       <Route path="schedule" element={<SchedulePage />} />
       <Route path="messages" element={<DoctorMessagesPage />} />
+      <Route path="profile" element={<ProfilePage />} />
+      <Route path="change-password" element={<ChangePasswordPage />} />
       <Route path="*" element={<Navigate to="dashboard" replace />} />
     </Routes>
   </DashboardLayout>

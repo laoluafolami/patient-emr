@@ -8,17 +8,17 @@ interface LogoProps {
 }
 
 const sizes = {
-  sm: 'w-7 h-7',
-  md: 'w-9 h-9',
-  lg: 'w-12 h-12',
-  xl: 'w-16 h-16',
+  sm: 'w-12 h-12',
+  md: 'w-16 h-16',
+  lg: 'w-24 h-24',
+  xl: 'w-32 h-32',
 };
 
 const textSizes = {
-  sm: 'text-sm',
-  md: 'text-base',
-  lg: 'text-xl',
-  xl: 'text-2xl',
+  sm: 'text-lg',
+  md: 'text-2xl',
+  lg: 'text-3xl',
+  xl: 'text-4xl',
 };
 
 export const Logo: React.FC<LogoProps> = ({

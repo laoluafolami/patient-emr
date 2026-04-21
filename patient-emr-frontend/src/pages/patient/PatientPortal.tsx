@@ -6,6 +6,8 @@ import { AppointmentsPage } from './AppointmentsPage';
 import { LabResultsPage } from './LabResultsPage';
 import { PrescriptionsPage } from './PrescriptionsPage';
 import { MessagesPage } from './MessagesPage';
+import { ProfilePage } from '../shared/ProfilePage';
+import { ChangePasswordPage } from '../shared/ChangePasswordPage';
 
 const navItems: NavItem[] = [
   {
@@ -94,7 +96,8 @@ export const PatientPortal: React.FC = () => (
       <Route path="lab-results" element={<LabResultsPage />} />
       <Route path="prescriptions" element={<PrescriptionsPage />} />
       <Route path="messages" element={<MessagesPage />} />
-      <Route path="profile" element={<ComingSoon page="My Profile" />} />
+      <Route path="profile" element={<ProfilePage />} />
+      <Route path="change-password" element={<ChangePasswordPage />} />
       <Route path="*" element={<Navigate to="dashboard" replace />} />
     </Routes>
   </DashboardLayout>

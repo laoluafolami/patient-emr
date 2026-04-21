@@ -6,6 +6,8 @@ import { UserManagementPage } from './UserManagementPage';
 import { ActivityLogsPage } from './ActivityLogsPage';
 import { SystemMonitorPage } from './SystemMonitorPage';
 import { SettingsPage } from './SettingsPage';
+import { ProfilePage } from '../shared/ProfilePage';
+import { ChangePasswordPage } from '../shared/ChangePasswordPage';
 
 const navItems: NavItem[] = [
   {
@@ -54,6 +56,8 @@ export const AdminPortal: React.FC = () => (
       <Route path="activity"   element={<ActivityLogsPage />} />
       <Route path="monitoring" element={<SystemMonitorPage />} />
       <Route path="settings"   element={<SettingsPage />} />
+      <Route path="profile"    element={<ProfilePage />} />
+      <Route path="change-password" element={<ChangePasswordPage />} />
       <Route path="*"          element={<Navigate to="dashboard" replace />} />
     </Routes>
   </DashboardLayout>

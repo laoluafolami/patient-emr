@@ -14,6 +14,7 @@ import activityLogRoutes from './routes/activityLogs';
 import patientRoutes from './routes/patients';
 import vitalsRoutes from './routes/vitals';
 import recordsRoutes from './routes/records';
+import appointmentRoutes from './routes/appointments';
 
 // Import middleware
 import { errorHandler } from './middleware/errorHandler';
@@ -75,6 +76,7 @@ app.use('/api/activity-logs', activityLogRoutes);
 app.use('/api/patients', patientRoutes);
 app.use('/api/vitals', vitalsRoutes);
 app.use('/api/records', recordsRoutes);
+app.use('/api/appointments', appointmentRoutes);
 
 // ============================================================================
 // ERROR HANDLING
@@ -116,6 +118,8 @@ app.listen(PORT, () => {
   ✓ GET  /api/auth/me
   ✓ POST /api/users (admin only)
   ✓ GET  /api/users (admin only)
+  ✓ GET  /api/appointments
+  ✓ POST /api/appointments (patient only)
 
   Ready to accept requests...
   `);
