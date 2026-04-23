@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { authService } from '../../services/authService';
 import { useAuth } from '../../context/AuthContext';
 
 export const ChangePasswordPage: React.FC = () => {
@@ -53,16 +54,33 @@ export const ChangePasswordPage: React.FC = () => {
     if (!validate()) return;
 
     setIsSubmitting(true);
-    // TODO: Implement API call to change password
-    await new Promise(r => setTimeout(r, 1500));
-    setIsSubmitting(false);
-    setSuccess(true);
-    setFormData({
-      currentPassword: '',
-      newPassword: '',
-      confirmPassword: '',
-    });
-    setErrors({});
+    try {
+      await authService.changePassword(
+        formData.currentPassword,
+        formData.newPassword,
+        formData.confirmPassword
+      );
+      
+      setSuccess(true);
+      setFormData({
+        currentPassword: '',
+        newPassword: '',
+        confirmPassword: '',
+      });
+      setErrors({});
+    } catch (error: any) {
+      console.error('Change password error:', error);
+      const message = error.response?.data?.message || 'Failed to change password. Please try again.';
+      
+      // Set error based on the response
+      if (message.toLowerCase().includes('current password')) {
+        setErrors({ currentPassword: message });
+      } else {
+        setErrors({ newPassword: message });
+      }
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   return (

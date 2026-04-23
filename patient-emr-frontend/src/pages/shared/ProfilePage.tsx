@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
 import { useAuth } from '../../context/AuthContext';
+import { profileService } from '../../services/profileService';
 
 export const ProfilePage: React.FC = () => {
-  const { user } = useAuth();
+  const { user, refreshUser } = useAuth();
   const [isEditing, setIsEditing] = useState(false);
   const [formData, setFormData] = useState({
     firstName: user?.firstName || '',
@@ -15,10 +16,28 @@ export const ProfilePage: React.FC = () => {
 
   const handleSave = async () => {
     setIsSaving(true);
-    // TODO: Implement API call to update profile
-    await new Promise(r => setTimeout(r, 1000));
-    setIsSaving(false);
-    setIsEditing(false);
+    try {
+      await profileService.updateProfile({
+        firstName: formData.firstName,
+        lastName: formData.lastName,
+        phone: formData.phone,
+        dateOfBirth: formData.dateOfBirth,
+      });
+      
+      // Update the user context with the new data
+      await refreshUser();
+      
+      setIsEditing(false);
+      
+      // Show success message (you can replace this with a toast notification)
+      alert('Profile updated successfully!');
+    } catch (error: any) {
+      console.error('Profile update error:', error);
+      const message = error.response?.data?.message || 'Failed to update profile. Please try again.';
+      alert(message);
+    } finally {
+      setIsSaving(false);
+    }
   };
 
   const handleCancel = () => {
