@@ -18,6 +18,8 @@ export interface LoginResponse {
       lastName: string;
       role: 'PATIENT' | 'NURSE' | 'DOCTOR' | 'ADMIN';
       status: string;
+      phone?: string;
+      dateOfBirth?: string;
     };
   };
 }
@@ -29,6 +31,8 @@ export interface User {
   lastName: string;
   role: 'PATIENT' | 'NURSE' | 'DOCTOR' | 'ADMIN';
   status: string;
+  phone?: string;
+  dateOfBirth?: string;
 }
 
 export const authService = {
